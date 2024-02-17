@@ -15,7 +15,7 @@ alias obsidian="obsidian --appimage-extract-and-run"
 #### END ALIAS ####
 
 # load vcs_info for git
-autoload -Uz vcs_info 
+autoload -Uz vcs_info compinit
 #### BASIC PROMPT ####
 # If you want to go back to normal, audo load prompinit and then you can uncomment out the next two lines..
 # promptinit
@@ -42,8 +42,8 @@ custom_prompt() {
   		background_colors=(141 219 111 108 210)
 		total_colors="${#background_colors[@]}"
 		local index="$1"
-			
-		echo "$background_colors[$index % $total_colors]"
+		local bg_index=$(( $index % $total_colors == 0 ? $total_colors : $index % $total_colors ))			
+		echo "$background_colors[bg_index]"
   	}
 		
 	local prompt_string=""
@@ -94,3 +94,5 @@ custom_prompt() {
 RPROMPT='%F{blue}[%*]%f'
 # my prompt calls my custom_prompt function to display all the good bits
 PROMPT='$(custom_prompt)'
+source /home/matt/.config/zsh/zsh-plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /home/matt/.config/zsh/zsh-plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
