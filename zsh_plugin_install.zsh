@@ -10,7 +10,7 @@ local plugins=( "zsh-autosuggestions" "zsh-syntax-highlighting" )
 
 # make plugin dir
 if [[ ! -d "$plugins_dir" ]]; then
-	mkdir $plugins_dir
+	mkdir -p $plugins_dir
 fi
 
 # download plugins
@@ -18,7 +18,7 @@ for plugin in $plugins; do
 	echo "Cloning $plugin"
 	local plugin_dir="$plugins_dir/$plugin"
 	git clone "https://github.com/zsh-users/$plugin" "$plugin_dir"
-	echo "source $plugin_dir/$plugin.zsh" >> ${ZDOTDIR}/.zshrc
+	# add source to config
+	echo "source $plugin_dir/$plugin.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
 done
 
-# now add source to .zshrc
