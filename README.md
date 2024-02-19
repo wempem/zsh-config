@@ -30,6 +30,8 @@ source $ZDOT_DIR/.zshrc
 ## NOTES
 
 My `.zshrc` includes a custom theme that requires nerd font. In order to use, you'll need to download a font from nerd front. From there you'll be able to access nerd font icons. 
-The git icon I use is `e708` and for the background effect I use `e0b4`
+The git icon I use is `e708` and for the background effect I use `e0b4`. Screenshot below.
+
+![screenshot](https://github.com/wempem/zsh-config/assets/25035997/f58d6595-0b64-42be-b71c-af5513a04708)
 
 Cheers 😀
