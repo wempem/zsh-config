@@ -3,12 +3,14 @@ HISTFILE=~/.config/zsh/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 
-#### OBSIDIAN ####
-
+#### OBS STR ####
 export PATH="$PATH:/usr/bin/obsidian"
 alias obsidian="obsidian --appimage-extract-and-run"
+#### OBS END ####
 
-#### END ####
+alias nv="nvim"
+bindkey '^[[A' history-search-backward
+bindkey '^[[B' history-search-forward
 #Adds auto completion and vcs_info
 autoload -Uz vcs_info compinit
 
